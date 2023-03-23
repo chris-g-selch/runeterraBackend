@@ -1,0 +1,48 @@
+POST http://localhost:2000/summoner
+Content-Type: application/json
+
+{
+    "summoner" : "SilverMidBoss",
+    "tag" : "Na1"
+}
+
+###
+
+POST http://localhost:2000/users/register
+Content-Type: application/json
+
+{
+    "username": "Weebstarz",
+    "password": 1234,
+    "firstName": "Christopher",
+    "lastName": "Gholston",
+    "email": "c.gholston1861@gmail.com",
+    "redirectLink": "http://localhost:300"
+}
+
+###
+POST http://localhost:2000/users/login
+Content-Type: application/json
+
+{
+    "username": "Weebstar",
+    "password": 1234,
+    "redirectLink": "http://localhost:300"
+}
+
+###
+POST /token HTTP/1.1
+Host: oauth2.googleapis.com
+Content-Type: application/x-www-form-urlencoded
+
+code=4/0AX4XfWibydNHwTzSwlILmkvK4KTTOuyufQ8k_rdggs0V2n47ychvf2bMFnef2P1KyOJ7Cg&
+client_id=918516123726-akqu3nl61k15kv1g2ctkdhkmgkm23rl4.apps.googleusercontent.com&
+client_secret=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&
+redirect_uri=https%3A//oauth2.example.com/code&
+grant_type=authorization_code
+
+
+###
+GET /v1/people/me?personFields=names,emailAddresses HTTP/1.1
+Host: people.googleapis.com
+Authorization: Bearer ya29.a0ARrdaM_xxzkzOeQ4VzE8V6KLNWN5us1TQ5KttmJ8JKPlU5OMA-MRwyTbhzcLheuIZn0b_aytKbGoZ31wyxPi9BpX7kP501ZdD6y6RP7iQnf20qnrxtKyAhrN_inXJ_aNNV4rLY_Uk_gnksi8Z-oEuQa4Hjfe
